@@ -6,30 +6,40 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/jaytaylor/html2text"
 )
 
+// use flags for this and the search term
 var urls = []string{"https://godoc.org/fmt#Sprintf", "https://getgb.io/", "https://golang.org/pkg/runtime/pprof/"}
+
+// const search string
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello")
 }
 
-// curl -XPOST -H 'Content-Type: application/json' -d '{"searchTerm": "feature"}' http://localhost:3000/
+// curl -XPOST -H 'Content-Type: application/json' -d '{"query,": "feature"}' http://localhost:3000/
 func searchHandler(w http.ResponseWriter, r *http.Request) {
 	// Let's do a bit of back-of-the-envelope profiling.
 	start := time.Now()
 
 	// Need to set up error handling story
 	// Create an app handler
+	// Or just write out an error message
 
-	ch := make(chan string)
+	// Also need to make a chan of errors
+	ch := make(chan map[string]bool)
 
 	for _, url := range urls {
 		go func(url string) {
-			log.Println(url)
+			if query == "" {
+				fmt.Println("No query term provided. Provide one with '-query=searchTerm'")
+				os.Exit(1)
+			}
+
 			response, err := http.Get(url)
 			if err != nil {
 				fmt.Printf("%s", err)
@@ -49,8 +59,11 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 					fmt.Printf("%s", err)
 					os.Exit(1)
 				}
+				// fmt.Printf("%s\n\n\n", text)
 
-				ch <- text
+				result := strings.Contains(text, query)
+
+				ch <- map[string]bool{url: result}
 			}
 
 			return
@@ -60,8 +73,8 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 	// add a timeout here
 	for i := 0; i < len(urls); i++ {
 		select {
-		case text := <-ch:
-			fmt.Printf("%s\n\n\n", text[:200])
+		case result := <-ch:
+			log.Printf("%+v", result)
 		}
 	}
 

@@ -1,11 +1,18 @@
 package main
 
 import (
+	"flag"
 	"net/http"
 	"os"
 )
 
+var query string
+
 func main() {
+
+	query = *flag.String("term", "", "search term")
+
+	flag.Parse()
 
 	// Define the application configuration.
 	port := os.Getenv("PORT")
