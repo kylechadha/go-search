@@ -7,26 +7,32 @@ import (
 	"net/http"
 	"os"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/jaytaylor/html2text"
 )
 
-const maxReqs = 20
-
+var maxReqs = 20
 var urls = []string{"https://godoc.org/fmt#Sprintf", "https://getgb.io/", "https://golang.org/pkg/runtime/pprof/"}
+
+type result struct {
+	url   string
+	found bool
+}
 
 func main() {
 	// Let's do a bit of back-of-the-envelope profiling.
 	start := time.Now()
 
-	query := flag.String("query", "", "search term")
+	term := flag.String("search", "", "search term")
 	flag.Parse()
 
-	results := search(*query)
+	results := search(*term)
 
-	for _, result := range results {
-		fmt.Printf("%+v\n", result)
+	for url, found := range results {
+		// is this the right Print to use here?
+		fmt.Printf("%s: %t\n", url, found)
 	}
 
 	elapsed := time.Since(start)
@@ -34,82 +40,92 @@ func main() {
 }
 
 // write tests :)
-func search(q string) []map[string]bool {
+// test with -race (specifically using the same slice of maps)
+func search(term string) map[string]bool {
 
+	if term == "" {
+		fmt.Println("No search term was provided. Expected arguments: '-search=searchTerm'.")
+		os.Exit(1)
+	}
 	// Need to set up error handling story
 
+	// *** pretty sure we'll just use the bottom for loop to add to the queue and then it all works gravy
 	// maybe you can remove the urls in a separate range, and send them on a channel
 	// and then the goroutines pull them off as they can do them
 	// will have to figure this part out
 
-	// wg.Add(maxReqs)
-	// for i:=0; i<maxReqs; i++ {
-	//     go func() {
-	//         for {
-	//             url, ok := <-ch
-	//             if !ok {
-	//                 wg.Done()
-	//                 return
-	//             }
-	//             fetch(url)
-	//         }
-	//     }()
-	// }
+	// does this need to be buffered?
+	// the buffered number needs to be greater than maxReqs though, apparently (why?)
+	// chu := make(chan string, 50)
+	chu := make(chan string)
+	chr := make(chan result)
+	var wg sync.WaitGroup
 
-	// for i:=0; i<50; i++ {
-	//     ch <- i // add i to the queue
-	// }
+	// If there are less than 20 urls, decrease maxReqs to the number of urls.
+	// This way we don't spin up unnecessary goroutines.
+	if maxReqs > len(urls) {
+		maxReqs = len(urls)
+	}
 
-	// close(ch)
-	// wg.Wait()
+	// what happens if the number of urls is less than maxReqs?
+	// it doesn't block because the channel closes when the range urls is done
+	wg.Add(maxReqs)
+	for i := 0; i < maxReqs; i++ {
+		go func() {
+			for {
+				url, ok := <-chu
+				if !ok {
+					log.Println("Channel closed I believeso")
+					wg.Done()
+					return
+				}
 
-	ch := make(chan map[string]bool)
-	for _, url := range urls {
-		go func(url string) {
-			if q == "" {
-				fmt.Println("No query term provided. Provide one with '-query=searchTerm'")
-				os.Exit(1)
-			}
-
-			response, err := http.Get(url)
-			if err != nil {
-				fmt.Printf("%s", err)
-				os.Exit(1)
-			} else {
-				defer response.Body.Close()
-				text, err := html2text.FromReader(response.Body)
+				response, err := http.Get(url)
 				if err != nil {
 					fmt.Printf("%s", err)
 					os.Exit(1)
+				} else {
+					defer response.Body.Close()
+					text, err := html2text.FromReader(response.Body)
+					if err != nil {
+						fmt.Printf("%s", err)
+						os.Exit(1)
+					}
+					// fmt.Printf("%s\n\n\n", text)
+
+					text, term = strings.ToLower(text), strings.ToLower(term)
+					found := strings.Contains(text, term)
+
+					chr <- result{url, found}
 				}
-				// fmt.Printf("%s\n\n\n", text)
-
-				text, q = strings.ToLower(text), strings.ToLower(q)
-				result := strings.Contains(text, q)
-
-				ch <- map[string]bool{url: result}
 			}
-
-			return
-		}(url)
+		}()
 	}
 
-	var results []map[string]bool
+	for _, url := range urls {
+		log.Printf("sending url: %s", url)
+		chu <- url
+	}
 
+	results := make(map[string]bool)
 	// add a timeout here
 	for i := 0; i < len(urls); i++ {
 		select {
-		case result := <-ch:
-			results = append(results, result)
+		case result := <-chr:
+			// is the append implementation better? there's a commit for it, check if you need to revert
+			log.Println("receiving result")
+			results[result.url] = result.found
 		}
 	}
+
+	log.Println("closing channel")
+	close(chu)
+	wg.Wait()
 
 	return results
 }
 
-// contents, err := ioutil.ReadAll(response.Body)
-// if err != nil {
-// 	fmt.Printf("%s", err)
-// 	os.Exit(1)
+// is this going to fetch AND search or just fetch? if AND search, then it needs the term .. if just search, than you have to return the respond.Body? dicey
+// func fetch(url string, c chan result) {
+
 // }
-// fmt.Printf("%s\n", string(contents))
