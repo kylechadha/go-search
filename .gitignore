@@ -27,18 +27,6 @@
 logs
 *.log
 
-# Grunt
-.grunt
-
-# Node
-.lock-wscript
-build/Release
-node_modules
-
-# SCSS
-**/.sass-cache
-**/.sass-cache/*
-
 # OSX
 .DS_Store
 .AppleDouble
