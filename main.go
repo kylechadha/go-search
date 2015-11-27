@@ -4,7 +4,6 @@ import (
 	"encoding/csv"
 	"flag"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"strings"
@@ -13,20 +12,8 @@ import (
 	"time"
 
 	"github.com/jaytaylor/html2text"
+	"github.com/timehop/golog/log"
 )
-
-// For everything
-// check variable names
-// check comments
-// check logs
-// check all errors are handled
-// add readme
-// try out gb
-// run with 10timeout
-
-// write tests :)
-// test with -race (specifically using the same slice of maps)
-// Need to set up error handling story
 
 // Set the maximum number of concurrent requests to be executed.
 var maxReqs = 20
@@ -38,8 +25,6 @@ type result struct {
 	err   error
 }
 
-// use timehop log package?
-// then can add a verbose flag
 func main() {
 	// Code used to profile the application.
 	// cfg := profile.Config{
@@ -53,35 +38,41 @@ func main() {
 	start := time.Now()
 
 	// Define flags for the input file and search term.
-	urlsFile := flag.String("input", "urls.txt", "location of file containing URLs")
-	term := flag.String("search", "", "search term")
+	term := flag.String("search", "", "required: provide a search term")
+	path := flag.String("input", "urls.txt", "enter the location of the file containing URLs")
+	v := flag.Bool("verbose", false, "verbose logging option")
 	flag.Parse()
 
-	// Read the input file.
-	urls, err := readFile(*urlsFile)
-	if err != nil {
-		fmt.Printf("Error reading from urls file: %s\n", err)
-		os.Exit(1)
+	// Set the log level based on the -verbose flag.
+	if *v == true {
+		log.SetLevel(4)
 	}
 
-	// Pass the search term and slice of URLs to the search method,
-	// with the first item removed (the column name).
+	// Read the input file.
+	urls, err := readFile(*path)
+	if err != nil {
+		log.Fatal("go-search", "Error reading from urls file", "error", err)
+	}
+
+	// Pass the search term and slice of URLs to the search method.
+	// Remove the first item of the urls slice (the column name).
 	results := search(*term, urls[1:])
 
 	// Write to the output file.
 	err = writeFile(results)
 	if err != nil {
-		fmt.Printf("Error writing to results file: %s\n", err)
-		os.Exit(1)
+		log.Fatal("go-search", "Error writing to results file", "error", err)
 	}
 
 	// Log the total execution time.
-	log.Printf("Search took %s", time.Since(start))
+	log.Info("go-search", fmt.Sprintf("Search took %s", time.Since(start)))
 }
 
 // readFile takes the file path of a csv file containing
 // URLs in the second column, and returns a slice of URLs.
 func readFile(path string) ([]string, error) {
+
+	log.Info("go-search", "Reading from the input file")
 
 	// Open the file.
 	f, err := os.Open(path)
@@ -110,6 +101,8 @@ func readFile(path string) ([]string, error) {
 // to 'results.txt' in tab-separated columns.
 func writeFile(results []result) error {
 
+	log.Info("go-search", "Writing to the output file")
+
 	// Create the file.
 	f, err := os.Create("results.txt")
 	if err != nil {
@@ -120,7 +113,7 @@ func writeFile(results []result) error {
 	// Create a new tabwriter.Writer.
 	w := new(tabwriter.Writer)
 
-	// Specify the file and formatting (tab-separated columns with a tab stop of 4).
+	// Specify the output and formatting (tab-separated columns with a tab stop of 4).
 	w.Init(
 		f,    // output
 		0,    // minwidth
@@ -134,10 +127,8 @@ func writeFile(results []result) error {
 	fileContents := "Site\tFound\tError\t\n"
 	for _, result := range results {
 		if result.err != nil {
-			log.Printf("site:%s found:%t err:%s\n", result.site, result.found, result.err.Error())
 			fileContents += fmt.Sprintf("%s\t%t\t%s\n", result.site, result.found, result.err.Error())
 		} else {
-			log.Printf("site:%s found:%t err:%v\n", result.site, result.found, result.err)
 			fileContents += fmt.Sprintf("%s\t%t\t%v\n", result.site, result.found, result.err)
 		}
 	}
@@ -155,7 +146,7 @@ func writeFile(results []result) error {
 	}
 
 	// Log the number of bytes written.
-	log.Printf("%d bytes written to results.txt", n)
+	log.Info("go-search", fmt.Sprintf("%d bytes written to results.txt", n))
 	return nil
 }
 
@@ -166,25 +157,24 @@ func search(term string, urls []string) []result {
 
 	// If no search term was provided, exit.
 	if term == "" {
-		fmt.Println("No search term was provided. Expected arguments: '-search=searchTerm'.")
-		os.Exit(1)
+		log.Fatal("go-search", "No search term was provided. Expected arguments: '-search=searchTerm'.")
 	} else {
 		// Lowercase the search term so our comparisons will be case-insensitive.
 		term = strings.ToLower(term)
 	}
 
-	// Create one chan of strings, on which we will send work to be processed (urls).
-	// Create one chan of type result, on which we will return results.
+	// Create a chan of strings to send work to be processed (urls).
+	// Create a chan of type result to send results.
 	// Set up a WaitGroup so we can track when all goroutines have finished processing.
 	ch := make(chan string)
 	done := make(chan result)
 	var wg sync.WaitGroup
 
-	// Create a single http client with a 5 second timeout.
+	// Create a single http Client with a 8 second timeout.
 	// From the docs: "Clients should be reused instead of created as
 	// needed. Clients are safe for concurrent use by multiple goroutines."
 	client := &http.Client{
-		Timeout: 5 * time.Second,
+		Timeout: 8 * time.Second,
 	}
 
 	// If there are less than 20 urls, decrease maxReqs to the number of
@@ -195,6 +185,7 @@ func search(term string, urls []string) []result {
 
 	// Spin up 'maxReqs' number of goroutines.
 	wg.Add(maxReqs)
+	log.Info("go-search", "Fetching urls...")
 	for i := 0; i < maxReqs; i++ {
 		go func() {
 			for {
@@ -210,16 +201,20 @@ func search(term string, urls []string) []result {
 				response, err := client.Get("http://" + site)
 				if err != nil {
 					// If there are errors, try again with the 'www' host prefix.
-					log.Println(err)
-					log.Printf("Initial request failed for %s, attempting 'www' prefix.", site)
+					log.Debug("go-search", err.Error())
+					log.Debug("go-search", fmt.Sprintf("Initial request failed for %s, attempting 'www' prefix.", site))
+					// log.Println(err)
+					// log.Printf("Initial request failed for %s, attempting 'www' prefix.", site)
 
 					response, err = client.Get("http://www." + site)
 				}
 
 				// If there are still errors, return the error message and 'continue' looping.
 				if err != nil {
-					log.Println(err)
-					log.Printf("Both requests failed for %s, returning an error.", site)
+					log.Debug("go-search", err.Error())
+					log.Debug("go-search", fmt.Sprintf("Both requests failed for %s, returning an error.", site))
+					// log.Println(err)
+					// log.Printf("Both requests failed for %s, returning an error.", site)
 					done <- result{site, false, err}
 					continue
 				}
@@ -231,7 +226,8 @@ func search(term string, urls []string) []result {
 				text, err := html2text.FromReader(response.Body)
 				response.Body.Close()
 				if err != nil {
-					log.Println(err)
+					log.Debug("go-search", err.Error())
+					// log.Println(err)
 					done <- result{site, false, err}
 					continue
 				}
@@ -246,7 +242,7 @@ func search(term string, urls []string) []result {
 	// Send work to be processed as goroutines become available.
 	go func() {
 		for _, site := range urls {
-			log.Printf("sending url: %s", site)
+			log.Debug("go-search", fmt.Sprintf("Sending work: %s", site))
 			ch <- site
 		}
 	}()
@@ -256,7 +252,7 @@ func search(term string, urls []string) []result {
 	for i := 0; i < len(urls); i++ {
 		select {
 		case result := <-done:
-			log.Printf("receiving result: %s", result.site)
+			log.Debug("go-search", fmt.Sprintf("Receiving result: %s", result.site))
 			results = append(results, result)
 		}
 	}
@@ -270,3 +266,11 @@ func search(term string, urls []string) []result {
 
 // go tool pprof -pdf ./go-search /var/folders/nx/4vjf6d_53pdgwsz8s9_p_5nw0000gp/T/profile729622153/cpu.pprof > cpu_profile2.pdf
 // go tool pprof -pdf ./go-search /var/folders/nx/4vjf6d_53pdgwsz8s9_p_5nw0000gp/T/profile729622153/mem.pprof > mem_profile2.pdf
+
+// Final Checklist
+// check variable names
+// check comments
+// check logs
+// check all errors are handled
+// run with 10timeout
+// test with -race (specifically using the same slice of maps)
