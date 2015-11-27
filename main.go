@@ -11,8 +11,8 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/jaytaylor/html2text"
-	"github.com/timehop/golog/log"
+	"github.com/kylechadha/go-search/Godeps/_workspace/src/github.com/jaytaylor/html2text"
+	"github.com/kylechadha/go-search/Godeps/_workspace/src/github.com/timehop/golog/log"
 )
 
 // Set the maximum number of concurrent requests to be executed.

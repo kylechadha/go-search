@@ -1,0 +1,19 @@
+{
+	"ImportPath": "github.com/kylechadha/go-search",
+	"GoVersion": "go1.5.1",
+	"Deps": [
+		{
+			"ImportPath": "github.com/jaytaylor/html2text",
+			"Rev": "4936b6c2ae7f89f5eeba2473c31fd27ea8f11068"
+		},
+		{
+			"ImportPath": "github.com/timehop/golog/log",
+			"Comment": "v1.0-beta.1-5-g4fa402b",
+			"Rev": "4fa402b5851c689c2c3c2b7ae3edd87f3c16548c"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html",
+			"Rev": "4f2fc6c1e69d41baf187332ee08fbd2b296f21ed"
+		}
+	]
+}
