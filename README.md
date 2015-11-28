@@ -1,4 +1,4 @@
-### Website Searcher
+## Website Searcher
 
 Given a list of urls in urls.txt, this program fetches each page and determines whether a search term exists on the page.
 
