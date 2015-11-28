@@ -11,8 +11,8 @@ import (
 	"text/tabwriter"
 	"time"
 
-	"github.com/kylechadha/go-search/Godeps/_workspace/src/github.com/jaytaylor/html2text"
-	"github.com/kylechadha/go-search/Godeps/_workspace/src/github.com/timehop/golog/log"
+	"github.com/jaytaylor/html2text"
+	"github.com/timehop/golog/log"
 )
 
 // Set the maximum number of concurrent requests to be executed.
@@ -37,14 +37,14 @@ func main() {
 	// Record the start time of execution.
 	start := time.Now()
 
-	// Define flags for the input file and search term.
-	term := flag.String("search", "", "required: provide a search term")
+	// Define flags for the input file, search term, and log level.
+	term := flag.String("search", "", "required: please provide a search term")
 	path := flag.String("input", "urls.txt", "enter the location of the file containing URLs")
-	v := flag.Bool("verbose", false, "verbose logging option")
+	verbose := flag.Bool("verbose", false, "verbose logging option")
 	flag.Parse()
 
 	// Set the log level based on the -verbose flag.
-	if *v == true {
+	if *verbose == true {
 		log.SetLevel(4)
 	}
 
@@ -55,7 +55,7 @@ func main() {
 	}
 
 	// Pass the search term and slice of URLs to the search method.
-	// Remove the first item of the urls slice (the column name).
+	// Note: Remove the first item of the urls slice (the column name).
 	results := search(*term, urls[1:])
 
 	// Write to the output file.
@@ -110,10 +110,10 @@ func writeFile(results []result) error {
 	}
 	defer f.Close()
 
-	// Create a new tabwriter.Writer.
+	// Create a new tabwriter.Writer and specify the output and
+	// formatting (tab-separated columns with a tab stop of 4).
+	// FYI: This will look nice in a text editor, but not notepad.
 	w := new(tabwriter.Writer)
-
-	// Specify the output and formatting (tab-separated columns with a tab stop of 4).
 	w.Init(
 		f,    // output
 		0,    // minwidth
@@ -147,6 +147,7 @@ func writeFile(results []result) error {
 
 	// Log the number of bytes written.
 	log.Info("go-search", fmt.Sprintf("%d bytes written to results.txt", n))
+
 	return nil
 }
 
@@ -170,22 +171,24 @@ func search(term string, urls []string) []result {
 	done := make(chan result)
 	var wg sync.WaitGroup
 
-	// Create a single http Client with a 8 second timeout.
+	// Create a single http Client with an 8 second timeout.
 	// From the docs: "Clients should be reused instead of created as
 	// needed. Clients are safe for concurrent use by multiple goroutines."
 	client := &http.Client{
 		Timeout: 8 * time.Second,
 	}
 
-	// If there are less than 20 urls, decrease maxReqs to the number of
-	// urls to avoid spinning up unnecessary goroutines.
+	// If there are less than 20 urls in urls.txt, decrease maxReqs to
+	// the number of urls to avoid spinning up unnecessary goroutines.
 	if maxReqs > len(urls) {
 		maxReqs = len(urls)
 	}
 
+	log.Info("go-search", "Fetching and searching urls...")
+	log.Info("go-search", "Go ahead, queue up your favorite jam: this will take ~30 seconds")
+
 	// Spin up 'maxReqs' number of goroutines.
 	wg.Add(maxReqs)
-	log.Info("go-search", "Fetching urls...")
 	for i := 0; i < maxReqs; i++ {
 		go func() {
 			for {
@@ -201,33 +204,26 @@ func search(term string, urls []string) []result {
 				response, err := client.Get("http://" + site)
 				if err != nil {
 					// If there are errors, try again with the 'www' host prefix.
-					log.Debug("go-search", err.Error())
-					log.Debug("go-search", fmt.Sprintf("Initial request failed for %s, attempting 'www' prefix.", site))
-					// log.Println(err)
-					// log.Printf("Initial request failed for %s, attempting 'www' prefix.", site)
+					log.Debug("go-search", fmt.Sprintf("Initial request failed for %s, attempting 'www' prefix.", site), "error", err)
 
 					response, err = client.Get("http://www." + site)
 				}
 
-				// If there are still errors, return the error message and 'continue' looping.
+				// If there are still errors, return the error message and continue looping.
 				if err != nil {
-					log.Debug("go-search", err.Error())
-					log.Debug("go-search", fmt.Sprintf("Both requests failed for %s, returning an error.", site))
-					// log.Println(err)
-					// log.Printf("Both requests failed for %s, returning an error.", site)
+					log.Debug("go-search", fmt.Sprintf("Both requests failed for %s, returning an error.", site), "error", err)
+
 					done <- result{site, false, err}
 					continue
 				}
 
-				// Extract the page text from the response.
+				// Extract the human-readable text from the response.
 				// Note that FromReader uses html.Parse under the hood,
 				// which reads to EOF in the same manner as ioutil.ReadAll.
 				// https://github.com/jaytaylor/html2text/blob/master/html2text.go#L167
 				text, err := html2text.FromReader(response.Body)
 				response.Body.Close()
 				if err != nil {
-					log.Debug("go-search", err.Error())
-					// log.Println(err)
 					done <- result{site, false, err}
 					continue
 				}
@@ -259,18 +255,9 @@ func search(term string, urls []string) []result {
 
 	// Close the channel as a signal to the goroutines that no additional work needs to be processed.
 	close(ch)
+
+	// Wait for the goroutines to be done processing.
 	wg.Wait()
 
 	return results
 }
-
-// go tool pprof -pdf ./go-search /var/folders/nx/4vjf6d_53pdgwsz8s9_p_5nw0000gp/T/profile729622153/cpu.pprof > cpu_profile2.pdf
-// go tool pprof -pdf ./go-search /var/folders/nx/4vjf6d_53pdgwsz8s9_p_5nw0000gp/T/profile729622153/mem.pprof > mem_profile2.pdf
-
-// Final Checklist
-// check variable names
-// check comments
-// check logs
-// check all errors are handled
-// run with 10timeout
-// test with -race (specifically using the same slice of maps)

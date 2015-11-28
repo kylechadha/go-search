@@ -4,9 +4,10 @@ Given a list of urls in urls.txt, this program fetches each page and determines 
 
 ### Installation Instructions
 
-1. `git clone` this repository
+1. `git clone` this repository into `$GOPATH/src/github.com/kylechadha/`
 2. `cd` into the directory: `cd go-search`
-3. run the `go-search` executable with flags:
+3. Install dependencies: `go get ./...`
+4. run the `go-search` executable with flags:
 	- `-search=searchTerm` 
 	- optional flag `-input` specifying the location of the urls file (the default is `urls.txt` in the current working directory)
 	- optional flag `-verbose` enables verbose logging
