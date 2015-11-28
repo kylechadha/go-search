@@ -200,6 +200,12 @@ func search(term string, urls []string) []result {
 					return
 				}
 
+				// Provide some visual feedback to the user for each url processed.
+				v := flag.Lookup("verbose")
+				if v.Value.String() == "false" {
+					fmt.Print(".")
+				}
+
 				// Fetch the page content.
 				response, err := client.Get("http://" + site)
 				if err != nil {
@@ -259,5 +265,6 @@ func search(term string, urls []string) []result {
 	// Wait for the goroutines to be done processing.
 	wg.Wait()
 
+	fmt.Print("Done!\n")
 	return results
 }
