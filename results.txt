@@ -1,501 +1,501 @@
 Site					Found	Error	
-wordpress.com/			false	<nil>
-google.com/				false	<nil>
-apple.com/				true	<nil>
-flickr.com/				false	<nil>
-w3.org/					true	<nil>
-myspace.com/			false	<nil>
-linkedin.com/			false	<nil>
-vimeo.com/				false	<nil>
-blogspot.com/			false	<nil>
-wordpress.org/			false	<nil>
-wikipedia.org/			false	<nil>
-tumblr.com/				false	<nil>
-pinterest.com/			false	<nil>
-statcounter.com/		true	<nil>
-facebook.com/			false	<nil>
-yahoo.com/				false	<nil>
-adobe.com/				true	<nil>
-youtube.com/			false	<nil>
-baidu.com/				false	<nil>
-twitter.com/			false	<nil>
-reddit.com/				true	<nil>
-youtu.be/				false	<nil>
-digg.com/				false	<nil>
-feedburner.com/			false	<nil>
-microsoft.com/			true	<nil>
-goo.gl/					false	<nil>
-cnn.com/				false	<nil>
-gov.uk/					true	<nil>
-nytimes.com/			true	<nil>
-msn.com/				false	<nil>
-macromedia.com/			true	<nil>
-icio.us/				false	<nil>
-weebly.com/				true	<nil>
-t.co/					true	<nil>
-bbc.co.uk/				true	<nil>
-blogger.com/			false	<nil>
-instagram.com/			false	<nil>
-miibeian.gov.cn/		false	<nil>
-webs.com/				true	<nil>
-stumbleupon.com/		false	<nil>
-amazon.com/				false	<nil>
-tinyurl.com/			true	<nil>
-fc2.com/				false	<nil>
-google.co.jp/			false	<nil>
-jimdo.com/				true	<nil>
-sourceforge.net/		false	<nil>
-google.de/				false	<nil>
-addthis.com/			true	<nil>
-creativecommons.org/	true	<nil>
-livejournal.com/		false	<nil>
-hugedomains.com/		true	<nil>
-free.fr/				true	<nil>
-delicious.com/			false	<nil>
-go.com/					true	<nil>
-about.com/				false	<nil>
-nih.gov/				true	<nil>
-huffingtonpost.com/		true	<nil>
-yandex.ru/				false	<nil>
-technorati.com/			true	<nil>
-vk.com/					false	<nil>
-imdb.com/				true	<nil>
-google.co.uk/			false	<nil>
-joomla.org/				true	<nil>
-europa.eu/				true	<nil>
-bing.com/				false	<nil>
-aol.com/				false	<nil>
-tripod.com/				false	<nil>
-wsj.com/				true	<nil>
-networkadvertising.org/	true	<nil>
-geocities.com/			false	<nil>
-gnu.org/				false	<nil>
-mapquest.com/			false	<nil>
-guardian.co.uk/			true	<nil>
-typepad.com/			false	<nil>
-wix.com/				true	<nil>
-ebay.com/				true	<nil>
-theguardian.com/		true	<nil>
-yahoo.co.jp/			false	<nil>
-qq.com/					false	<nil>
-washingtonpost.com/		true	<nil>
-slideshare.net/			false	<nil>
-forbes.com/				true	<nil>
-clickbank.net/			false	<nil>
-homestead.com/			false	<nil>
-usatoday.com/			true	<nil>
-godaddy.com/			true	<nil>
-posterous.com/			false	<nil>
-soundcloud.com/			false	<nil>
-telegraph.co.uk/		true	<nil>
-amazon.co.uk/			false	<nil>
-reuters.com/			true	<nil>
-etsy.com/				false	<nil>
-cnet.com/				false	<nil>
-ameblo.jp/				false	<nil>
-google.fr/				false	<nil>
-photobucket.com/		false	<nil>
-mail.ru/				false	<nil>
-issuu.com/				false	<nil>
-latimes.com/			false	<nil>
-yelp.com/				false	<nil>
-constantcontact.com/	true	<nil>
-rakuten.co.jp/			true	<nil>
-rambler.ru/				false	<nil>
-e-recht24.de/			false	<nil>
-php.net/				true	<nil>
-archive.org/			true	<nil>
-taobao.com/				true	<nil>
-bbb.org/				true	<nil>
-phpbb.com/				true	<nil>
-weibo.com/				false	<nil>
-phoca.cz/				true	<nil>
-51.la/					true	<nil>
-dailymotion.com/		true	<nil>
-amazon.de/				false	<nil>
-time.com/				false	<nil>
-scribd.com/				true	<nil>
-opera.com/				false	<nil>
-google.it/				false	<nil>
-squidoo.com/			false	<nil>
-wikimedia.org/			false	<nil>
-dailymail.co.uk/		true	<nil>
-parallels.com/			true	<nil>
-histats.com/			false	<nil>
-mozilla.org/			true	<nil>
-stanford.edu/			true	<nil>
-mit.edu/				true	<nil>
-harvard.edu/			true	<nil>
-npr.org/				true	<nil>
-altervista.org/			false	<nil>
-miitbeian.gov.cn/		false	<nil>
-cdc.gov/				false	<nil>
-blog.com/				true	<nil>
-wired.com/				true	<nil>
-ning.com/				true	<nil>
-eventbrite.com/			true	<nil>
-narod.ru/				false	<nil>
-live.com/				false	<nil>
-imageshack.us/			true	<nil>
-deviantart.com/			true	<nil>
-sina.com.cn/			true	<nil>
-gravatar.com/			false	<nil>
-nasa.gov/				false	<nil>
-alibaba.com/			true	<nil>
-amazonaws.com/			true	<nil>
-nbcnews.com/			true	<nil>
-ca.gov/					true	<nil>
-kickstarter.com/		true	<nil>
-google.es/				false	<nil>
-addtoany.com/			true	<nil>
-weather.com/			true	<nil>
-bloomberg.com/			true	<nil>
-google.ca/				false	<nil>
-ibm.com/				true	<nil>
-sakura.ne.jp/			false	<nil>
-cpanel.net/				true	<nil>
-pbs.org/				true	<nil>
-barnesandnoble.com/		false	<nil>
-prweb.com/				true	<nil>
-angelfire.com/			true	<nil>
-dedecms.com/			true	<nil>
-eepurl.com/				false	<nil>
-xrea.com/				false	<nil>
-noaa.gov/				true	<nil>
-blinklist.com/			true	<nil>
-over-blog.com/			false	<nil>
-amazon.co.jp/			true	<nil>
-foxnews.com/			true	<nil>
-cbsnews.com/			true	<nil>
-loc.gov/				true	<nil>
-nifty.com/				false	<nil>
-bandcamp.com/			true	<nil>
-apache.org/				true	<nil>
-newsvine.com/			true	<nil>
-mashable.com/			true	<nil>
-mozilla.com/			false	<nil>
-businessweek.com/		true	<nil>
-a8.net/					true	<nil>
-tripadvisor.com/		false	<nil>
-yolasite.com/			true	<nil>
-biglobe.ne.jp/			false	<nil>
-goo.ne.jp/				true	<nil>
-ted.com/				true	<nil>
-hatena.ne.jp/			false	<nil>
-whitehouse.gov/			true	<nil>
-nationalgeographic.com/	false	<nil>
-berkeley.edu/			true	<nil>
-usda.gov/				true	<nil>
-cornell.edu/			true	<nil>
-ocn.ne.jp/				false	<nil>
-sfgate.com/				true	<nil>
-examiner.com/			false	<nil>
-bluehost.com/			true	<nil>
-alexa.com/				true	<nil>
-nps.gov/				true	<nil>
-techcrunch.com/			true	<nil>
-boston.com/				true	<nil>
-squarespace.com/		true	<nil>
-un.org/					false	<nil>
-hp.com/					false	<nil>
-mysql.com/				true	<nil>
-disqus.com/				false	<nil>
-discuz.net/				false	<nil>
-house.gov/				true	<nil>
-oracle.com/				true	<nil>
-imgur.com/				true	<nil>
-vkontakte.ru/			false	<nil>
-google.nl/				false	<nil>
-bizjournals.com/		false	<nil>
-geocities.jp/			false	<nil>
-ezinearticles.com/		true	<nil>
-sphinn.com/				true	<nil>
-people.com.cn/			false	<nil>
-ucoz.ru/				true	<nil>
-independent.co.uk/		true	<nil>
-sohu.com/				true	<nil>
-cloudflare.com/			true	<nil>
-cbslocal.com/			false	<nil>
-opensource.org/			true	<nil>
-irs.gov/				true	<nil>
-seesaa.net/				true	<nil>
-who.int/				true	<nil>
-epa.gov/				true	<nil>
-businessinsider.com/	false	<nil>
-mediafire.com/			true	<nil>
-senate.gov/				false	<nil>
-webnode.com/			true	<nil>
-nature.com/				true	<nil>
-reverbnation.com/		false	<nil>
-wunderground.com/		true	<nil>
-ustream.tv/				false	<nil>
-about.me/				false	<nil>
-ycombinator.com/		true	<nil>
-soup.io/				true	<nil>
-wikia.com/				true	<nil>
-last.fm/				true	<nil>
-gmpg.org/				false	<nil>
-github.com/				true	<nil>
-skype.com/				false	<nil>
-webmd.com/				true	<nil>
-spiegel.de/				false	<nil>
-icq.com/				true	<nil>
-cbc.ca/					true	<nil>
-drupal.org/				false	<nil>
-google.com.br/			false	<nil>
-umich.edu/				true	<nil>
-freewebs.com/			true	<nil>
-wiley.com/				true	<nil>
-topsy.com/				false	<nil>
-mac.com/				true	<nil>
-youku.com/				false	<nil>
-shinystat.com/			true	<nil>
-google.pl/				false	<nil>
-redcross.org/			true	<nil>
-discovery.com/			true	<nil>
-fda.gov/				false	<nil>
-google.cn/				false	<nil>
-moonfruit.com/			true	<nil>
-xinhuanet.com/			true	<nil>
-oaic.gov.au/			true	<nil>
-behance.net/			false	<nil>
-prnewswire.com/			true	<nil>
-goodreads.com/			false	<nil>
-jugem.jp/				true	<nil>
-ft.com/					true	<nil>
-163.com/				true	<nil>
-census.gov/				true	<nil>
-marketwatch.com/		false	<nil>
-sitemeter.com/			true	<nil>
-netvibes.com/			true	<nil>
-state.gov/				true	<nil>
-networksolutions.com/	true	<nil>
-ifeng.com/				false	<nil>
-ed.gov/					true	<nil>
-uol.com.br/				false	<nil>
-privacy.gov.au/			true	<nil>
-paypal.com/				true	<nil>
-chicagotribune.com/		false	<nil>
-nydailynews.com/		true	<nil>
-economist.com/			true	<nil>
-ow.ly/					false	<nil>
-google.com.au/			false	<nil>
-skyrock.com/			true	<nil>
-ftc.gov/				true	<nil>
-friendfeed.com/			true	<nil>
-exblog.jp/				false	<nil>
-theatlantic.com/		true	<nil>
-dropbox.com/			true	<nil>
-auda.org.au/			true	<nil>
-ehow.com/				true	<nil>
-surveymonkey.com/		false	<nil>
-slashdot.org/			true	<nil>
-meetup.com/				false	<nil>
-patch.com/				true	<nil>
-com.com/				false	<nil>
-netscape.com/			false	<nil>
-elegantthemes.com/		true	<nil>
-list-manage.com/		true	<nil>
-quantcast.com/			true	<nil>
-diigo.com/				true	<nil>
-columbia.edu/			true	<nil>
-marriott.com/			true	<nil>
-pagesperso-orange.fr/	false	<nil>
-bigcartel.com/			true	<nil>
-hubpages.com/			false	<nil>
-usgs.gov/				true	<nil>
-engadget.com/			true	<nil>
-utexas.edu/				true	<nil>
-yale.edu/				true	<nil>
-ucla.edu/				true	<nil>
-washington.edu/			true	<nil>
-upenn.edu/				true	<nil>
-cargocollective.com/	true	<nil>
-nhs.uk/					true	<nil>
-abc.net.au/				true	<nil>
-jigsy.com/				false	<nil>
-liveinternet.ru/		true	<nil>
-umn.edu/				true	<nil>
-slate.com/				true	<nil>
-howstuffworks.com/		true	<nil>
-flavors.me/				false	<nil>
-purevolume.com/			true	<nil>
-usnews.com/				true	<nil>
-edublogs.org/			true	<nil>
-desdev.cn/				false	<nil>
-wisc.edu/				true	<nil>
-example.com/			false	<nil>
-wikispaces.com/			true	<nil>
-lycos.com/				false	<nil>
-hc360.com/				false	<nil>
-usa.gov/				true	<nil>
-zdnet.com/				false	<nil>
-is.gd/					true	<nil>
-g.co/					false	<nil>
-thetimes.co.uk/			true	<nil>
-shareasale.com/			true	<nil>
-dagondesign.com/		false	<nil>
-biblegateway.com/		true	<nil>
-yellowbook.com/			false	<nil>
-so-net.ne.jp/			false	<nil>
-storify.com/			false	<nil>
-gizmodo.com/			true	<nil>
-ucoz.com/				true	<nil>
-plala.or.jp/			true	<nil>
-comsenz.com/			true	<nil>
-xing.com/				false	<nil>
-jiathis.com/			true	<nil>
-reference.com/			true	<nil>
-businesswire.com/		true	<nil>
-salon.com/				true	<nil>
-sun.com/				true	<nil>
-infoseek.co.jp/			false	<nil>
-samsung.com/			true	<nil>
-cdbaby.com/				true	<nil>
-unicef.org/				true	<nil>
-devhub.com/				true	<nil>
-answers.com/			false	<nil>
-theglobeandmail.com/	true	<nil>
-dion.ne.jp/				true	<nil>
-unesco.org/				true	<nil>
-artisteer.com/			true	<nil>
-smh.com.au/				true	<nil>
-state.tx.us/			true	<nil>
-istockphoto.com/		true	<nil>
-paginegialle.it/		false	<nil>
-psu.edu/				true	<nil>
-t-online.de/			false	<nil>
-trellian.com/			true	<nil>
-ask.com/				false	<nil>
-booking.com/			true	<nil>
-1und1.de/				true	<nil>
-i2i.jp/					false	<nil>
-hexun.com/				true	<nil>
-sciencedaily.com/		false	<nil>
-ebay.co.uk/				true	<nil>
-deliciousdays.com/		true	<nil>
-cmu.edu/				true	<nil>
-cocolog-nifty.com/		false	<nil>
-wufoo.com/				true	<nil>
-si.edu/					true	<nil>
-twitpic.com/			true	<nil>
-google.ru/				false	<nil>
-smugmug.com/			true	<nil>
-ovh.net/				false	<nil>
-odnoklassniki.ru/		false	<nil>
-hud.gov/				false	<nil>
-hibu.com/				true	<nil>
-domainmarket.com/		true	<nil>
-canalblog.com/			true	<nil>
-springer.com/			true	<nil>
-hhs.gov/				true	<nil>
-sciencedirect.com/		true	<nil>
-google.com.hk/			false	<nil>
-blogs.com/				false	<nil>
-dmoz.org/				false	<nil>
-naver.com/				false	<nil>
-cnbc.com/				true	<nil>
-timesonline.co.uk/		true	<nil>
-prlog.org/				true	<nil>
-home.pl/				false	<nil>
-globo.com/				false	<nil>
-java.com/				false	<nil>
-dot.gov/				true	<nil>
-jalbum.net/				true	<nil>
-webeden.co.uk/			true	<nil>
-github.io/				false	<nil>
-cyberchimps.com/		true	<nil>
-mtv.com/				false	<nil>
-intel.com/				true	<nil>
-cisco.com/				true	<nil>
-vistaprint.com/			true	<nil>
-chronoengine.com/		true	<nil>
-symantec.com/			true	<nil>
-uiuc.edu/				true	<nil>
-studiopress.com/		true	<nil>
-virginia.edu/			false	<nil>
-zimbio.com/				false	<nil>
-craigslist.org/			false	<nil>
-printfriendly.com/		false	<nil>
-mlb.com/				true	<nil>
-indiatimes.com/			true	<nil>
-cafepress.com/			true	<nil>
-wp.com/					false	<nil>
-mayoclinic.com/			true	<nil>
-simplemachines.org/		false	<nil>
-4shared.com/			true	<nil>
-omniture.com/			true	<nil>
-dell.com/				true	<nil>
-1688.com/				false	<nil>
-japanpost.jp/			false	<nil>
-accuweather.com/		true	<nil>
-nba.com/				true	<nil>
-360.cn/					true	<nil>
-nyu.edu/				false	<nil>
-chron.com/				true	<nil>
-merriam-webster.com/	true	<nil>
-indiegogo.com/			true	<nil>
-admin.ch/				false	<nil>
-fotki.com/				true	<nil>
-mapy.cz/				false	<nil>
-lulu.com/				true	<nil>
-tuttocitta.it/			false	<nil>
-tiny.cc/				true	<nil>
-bravesites.com/			false	<nil>
-buzzfeed.com/			true	<nil>
-tamu.edu/				true	<nil>
-yellowpages.com/		true	<nil>
-toplist.cz/				false	<nil>
-ox.ac.uk/				true	<nil>
-csmonitor.com/			true	<nil>
-nymag.com/				true	<nil>
-comcast.net/			true	<nil>
-blogtalkradio.com/		true	<nil>
-hostgator.com/			true	<nil>
-army.mil/				true	<nil>
-shop-pro.jp/			false	<nil>
-msu.edu/				true	<nil>
-earthlink.net/			true	<nil>
-elpais.com/				true	<nil>
-oakley.com/				true	<nil>
-fema.gov/				true	<nil>
-aboutads.info/			true	<nil>
-princeton.edu/			true	<nil>
-ucsd.edu/				true	<nil>
-va.gov/					true	<nil>
-multiply.com/			true	<nil>
-fastcompany.com/		false	<nil>
-netlog.com/				false	<nil>
-tinypic.com/			false	<nil>
-pen.io/					true	<nil>
-walmart.com/			true	<nil>
-seattletimes.com/		true	<nil>
-themeforest.net/		true	<nil>
-rediff.com/				true	<nil>
-scientificamerican.com/	true	<nil>
-dyndns.org/				true	<nil>
-china.com.cn/			false	<nil>
-acquirethisname.com/	false	<nil>
-cam.ac.uk/				true	<nil>
-unblog.fr/				true	<nil>
-illinois.edu/			true	<nil>
-123-reg.co.uk/			true	<nil>
-sbwire.com/				true	<nil>
-shutterfly.com/			false	<nil>
-arstechnica.com/		true	<nil>
-unc.edu/				true	<nil>
-woothemes.com/			true	<nil>
-pcworld.com/			true	<nil>
-arizona.edu/			true	<nil>
-ihg.com/				true	<nil>
-vinaora.com/			false	<nil>
-spotify.com/			true	<nil>
-bloglovin.com/			false	<nil>
-newyorker.com/			true	<nil>
-tmall.com/				false	<nil>
-nsw.gov.au/				true	<nil>
-bloglines.com/			false	Get http://www.bloglines.com/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
-hao123.com/				false	<nil>
-de.vu/					false	Get http://www.de.vu/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
-furl.net/				false	Get http://www.furl.net/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
-sogou.com/				false	Get https://www.sogou.com/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+facebook.com/					Get http://www.facebook.com/: dial tcp 127.0.0.1:80: getsockopt: connection refused
+wordpress.com/			false	
+google.com/				false	
+wikipedia.org/			false	
+w3.org/					true	
+vimeo.com/				false	
+myspace.com/			false	
+digg.com/				false	
+apple.com/				true	
+pinterest.com/			false	
+twitter.com/			false	
+wordpress.org/			false	
+amazon.com/				false	
+statcounter.com/		true	
+tumblr.com/				false	
+linkedin.com/			false	
+microsoft.com/			true	
+adobe.com/				true	
+nytimes.com/			true	
+stumbleupon.com/		false	
+addthis.com/			true	
+weebly.com/				true	
+youtu.be/				false	
+youtube.com/			false	
+delicious.com/			false	
+bbc.co.uk/				true	
+blogspot.com/			false	
+goo.gl/					false	
+feedburner.com/			false	
+t.co/					true	
+instagram.com/			false	
+blogger.com/			false	
+macromedia.com/			true	
+webs.com/				true	
+msn.com/				false	
+flickr.com/				false	
+reddit.com/				true	
+tinyurl.com/			true	
+google.co.jp/			false	
+sourceforge.net/		false	
+livejournal.com/		false	
+fc2.com/				false	
+creativecommons.org/	true	
+go.com/					true	
+cnn.com/				false	
+yahoo.com/				false	
+yandex.ru/				false	
+vk.com/					false	
+imdb.com/				true	
+jimdo.com/				true	
+google.de/				false	
+hugedomains.com/		true	
+free.fr/				true	
+icio.us/				false	
+technorati.com/			true	
+google.co.uk/			false	
+joomla.org/				true	
+nih.gov/				true	
+huffingtonpost.com/		true	
+gov.uk/					true	
+typepad.com/			false	
+networkadvertising.org/	true	
+aol.com/				false	
+theguardian.com/		true	
+guardian.co.uk/			true	
+issuu.com/				false	
+geocities.com/			false	
+bing.com/				false	
+yahoo.co.jp/			false	
+gnu.org/				false	
+mapquest.com/			false	
+ebay.com/				true	
+wsj.com/				true	
+rambler.ru/				false	
+europa.eu/				true	
+mozilla.org/			true	
+washingtonpost.com/		true	
+slideshare.net/			false	
+about.com/				false	
+forbes.com/				true	
+ameblo.jp/				false	
+godaddy.com/			true	
+wix.com/				true	
+homestead.com/			false	
+clickbank.net/			false	
+miibeian.gov.cn/		false	
+photobucket.com/		false	
+soundcloud.com/			false	
+cnet.com/				false	
+etsy.com/				false	
+tripod.com/				false	
+posterous.com/			false	
+google.fr/				false	
+constantcontact.com/	true	
+reuters.com/			true	
+archive.org/			true	
+telegraph.co.uk/		true	
+taobao.com/				true	
+mail.ru/				false	
+yelp.com/				false	
+amazon.co.uk/			false	
+sina.com.cn/			true	
+dailymotion.com/		true	
+php.net/				true	
+bbb.org/				true	
+phoca.cz/				true	
+usatoday.com/			true	
+latimes.com/			false	
+rakuten.co.jp/			true	
+dailymail.co.uk/		true	
+scribd.com/				true	
+wikimedia.org/			false	
+phpbb.com/				true	
+time.com/				false	
+opera.com/				false	
+mit.edu/				true	
+google.it/				false	
+parallels.com/			true	
+cdc.gov/				false	
+squidoo.com/			false	
+deviantart.com/			true	
+altervista.org/			false	
+stanford.edu/			true	
+e-recht24.de/			false	
+addtoany.com/			true	
+harvard.edu/			true	
+histats.com/			false	
+163.com/				true	
+live.com/				false	
+gravatar.com/			false	
+npr.org/				true	
+alibaba.com/			true	
+ca.gov/					true	
+amazonaws.com/			true	
+amazon.de/				false	
+blinklist.com/			true	
+weibo.com/				false	
+blog.com/				true	
+wired.com/				true	
+imageshack.us/			true	
+eventbrite.com/			true	
+google.es/				false	
+narod.ru/				false	
+miitbeian.gov.cn/		false	
+nbcnews.com/			true	
+google.ca/				false	
+sakura.ne.jp/			false	
+kickstarter.com/		true	
+cpanel.net/				true	
+baidu.com/				false	
+dedecms.com/			true	
+over-blog.com/			false	
+bloomberg.com/			true	
+amazon.co.jp/			true	
+ibm.com/				true	
+weather.com/			true	
+pbs.org/				true	
+cbsnews.com/			true	
+foxnews.com/			true	
+eepurl.com/				false	
+51.la/					true	
+nifty.com/				false	
+prweb.com/				true	
+mozilla.com/			false	
+qq.com/					false	
+angelfire.com/			true	
+noaa.gov/				true	
+barnesandnoble.com/		false	
+loc.gov/				true	
+businessweek.com/		true	
+hatena.ne.jp/			false	
+mashable.com/			true	
+bandcamp.com/			true	
+yolasite.com/			true	
+apache.org/				true	
+newsvine.com/			true	
+berkeley.edu/			true	
+ted.com/				true	
+a8.net/					true	
+tripadvisor.com/		false	
+sfgate.com/				true	
+nationalgeographic.com/	false	
+usda.gov/				true	
+biglobe.ne.jp/			false	
+xrea.com/				false	
+ocn.ne.jp/				false	
+bluehost.com/			true	
+whitehouse.gov/			true	
+oracle.com/				true	
+nps.gov/				true	
+examiner.com/			false	
+goo.ne.jp/				true	
+techcrunch.com/			true	
+un.org/					false	
+vkontakte.ru/			false	
+boston.com/				true	
+squarespace.com/		true	
+sohu.com/				true	
+freewebs.com/			true	
+sphinn.com/				true	
+seesaa.net/				true	
+ning.com/				true	
+google.nl/				false	
+imgur.com/				false	
+independent.co.uk/		true	
+ezinearticles.com/		true	
+geocities.jp/			false	
+disqus.com/				false	
+hp.com/					false	
+alexa.com/				true	
+ucoz.ru/				true	
+mysql.com/				true	
+cloudflare.com/			true	
+cornell.edu/			true	
+cbslocal.com/			false	
+house.gov/				true	
+mediafire.com/			true	
+opensource.org/			true	
+bizjournals.com/		false	
+ycombinator.com/		true	
+wunderground.com/		true	
+reverbnation.com/		false	
+soup.io/				true	
+people.com.cn/			false	
+ustream.tv/				false	
+senate.gov/				false	
+businessinsider.com/	false	
+who.int/				true	
+epa.gov/				true	
+wikia.com/				true	
+about.me/				false	
+last.fm/				true	
+nature.com/				true	
+gmpg.org/				false	
+fda.gov/				false	
+skype.com/				false	
+umich.edu/				true	
+redcross.org/			true	
+spiegel.de/				false	
+webnode.com/			true	
+drupal.org/				false	
+cbc.ca/					true	
+webmd.com/				true	
+google.com.br/			false	
+mac.com/				true	
+wiley.com/				true	
+discovery.com/			true	
+topsy.com/				false	
+icq.com/				true	
+discuz.net/				false	
+google.pl/				false	
+prnewswire.com/			true	
+google.cn/				false	
+xinhuanet.com/			true	
+moonfruit.com/			true	
+jugem.jp/				true	
+oaic.gov.au/			true	
+ft.com/					true	
+shinystat.com/			true	
+behance.net/			false	
+nasa.gov/				false	
+ifeng.com/				false	
+sitemeter.com/			true	
+github.com/				true	
+surveymonkey.com/		false	
+marketwatch.com/		false	
+exblog.jp/				false	
+networksolutions.com/	true	
+uol.com.br/				false	
+census.gov/				true	
+state.gov/				true	
+ed.gov/					true	
+privacy.gov.au/			true	
+goodreads.com/			false	
+chicagotribune.com/		false	
+nydailynews.com/		true	
+meetup.com/				false	
+ow.ly/					false	
+google.com.au/			false	
+list-manage.com/		true	
+theatlantic.com/		true	
+cafepress.com/			true	
+netvibes.com/			true	
+ftc.gov/				true	
+youku.com/				false	
+economist.com/			true	
+netscape.com/			false	
+skyrock.com/			true	
+liveinternet.ru/		true	
+ehow.com/				true	
+pagesperso-orange.fr/	false	
+quantcast.com/			true	
+friendfeed.com/			true	
+dropbox.com/			true	
+upenn.edu/				true	
+engadget.com/			true	
+columbia.edu/			true	
+slashdot.org/			false	
+yale.edu/				true	
+patch.com/				true	
+diigo.com/				true	
+comsenz.com/			true	
+hubpages.com/			false	
+irs.gov/				true	
+marriott.com/			true	
+com.com/				false	
+slate.com/				true	
+washington.edu/			true	
+paypal.com/				true	
+usgs.gov/				true	
+bigcartel.com/			true	
+auda.org.au/			true	
+nhs.uk/					true	
+elegantthemes.com/		true	
+howstuffworks.com/		true	
+cargocollective.com/	true	
+abc.net.au/				true	
+umn.edu/				true	
+flavors.me/				false	
+usnews.com/				true	
+wikispaces.com/			true	
+utexas.edu/				true	
+usa.gov/				true	
+wisc.edu/				true	
+jigsy.com/				false	
+example.com/			false	
+edublogs.org/			true	
+cdbaby.com/				true	
+shareasale.com/			true	
+xing.com/				false	
+desdev.cn/				false	
+is.gd/					true	
+ucla.edu/				true	
+so-net.ne.jp/			false	
+g.co/					false	
+jiathis.com/			true	
+infoseek.co.jp/			false	
+yellowbook.com/			false	
+dagondesign.com/		false	
+storify.com/			false	
+thetimes.co.uk/			true	
+gizmodo.com/			true	
+biblegateway.com/		true	
+plala.or.jp/			true	
+ucoz.com/				true	
+lycos.com/				false	
+reference.com/			true	
+theglobeandmail.com/	true	
+sun.com/				true	
+unicef.org/				true	
+businesswire.com/		true	
+samsung.com/			true	
+salon.com/				true	
+hc360.com/				false	
+devhub.com/				true	
+psu.edu/				true	
+smh.com.au/				true	
+answers.com/			false	
+zdnet.com/				false	
+hexun.com/				true	
+intel.com/				true	
+istockphoto.com/		true	
+trellian.com/			true	
+booking.com/			true	
+t-online.de/			false	
+sciencedaily.com/		false	
+paginegialle.it/		false	
+dion.ne.jp/				true	
+ask.com/				false	
+domainmarket.com/				Get http://www.domainmarket.com/: dial tcp 174.137.132.100:80: getsockopt: connection refused
+1und1.de/				true	
+state.tx.us/			true	
+cmu.edu/				true	
+deliciousdays.com/		true	
+canalblog.com/			true	
+cocolog-nifty.com/		false	
+twitpic.com/			true	
+ovh.net/				false	
+wufoo.com/				true	
+i2i.jp/					false	
+smugmug.com/			true	
+unesco.org/				true	
+si.edu/					true	
+google.ru/				false	
+hibu.com/				true	
+hud.gov/				false	
+sciencedirect.com/		true	
+blogs.com/				false	
+google.com.hk/			false	
+odnoklassniki.ru/		false	
+hhs.gov/				true	
+naver.com/				false	
+cnbc.com/				true	
+dot.gov/				true	
+dmoz.org/				false	
+springer.com/			true	
+jalbum.net/				true	
+newyorker.com/			true	
+timesonline.co.uk/		true	
+ebay.co.uk/				true	
+cyberchimps.com/		true	
+java.com/				false	
+mtv.com/				false	
+home.pl/				false	
+prlog.org/				true	
+zimbio.com/				false	
+github.io/				false	
+purevolume.com/			true	
+cisco.com/				true	
+symantec.com/			true	
+indiatimes.com/			true	
+studiopress.com/		true	
+printfriendly.com/		false	
+chronoengine.com/		true	
+4shared.com/			true	
+vistaprint.com/			true	
+mlb.com/				true	
+webeden.co.uk/			true	
+virginia.edu/			false	
+1688.com/				false	
+uiuc.edu/				true	
+wp.com/					false	
+craigslist.org/			false	
+mayoclinic.com/			true	
+accuweather.com/		true	
+globo.com/				false	
+nyu.edu/				false	
+dell.com/				true	
+chron.com/				true	
+omniture.com/			true	
+merriam-webster.com/	true	
+nba.com/				true	
+artisteer.com/			true	
+fotki.com/				true	
+japanpost.jp/			false	
+simplemachines.org/		false	
+indiegogo.com/			true	
+admin.ch/				false	
+buzzfeed.com/			true	
+mapy.cz/				false	
+tiny.cc/				true	
+ox.ac.uk/				true	
+army.mil/				true	
+csmonitor.com/			true	
+rediff.com/				true	
+comcast.net/			true	
+bravesites.com/			false	
+toplist.cz/				false	
+lulu.com/				true	
+nymag.com/				true	
+va.gov/					true	
+oakley.com/				true	
+hostgator.com/			true	
+tuttocitta.it/			false	
+tamu.edu/				true	
+yellowpages.com/		true	
+elpais.com/				true	
+fastcompany.com/		false	
+msu.edu/				true	
+unblog.fr/				true	
+shop-pro.jp/			false	
+blogtalkradio.com/		true	
+fema.gov/				true	
+aboutads.info/			true	
+ucsd.edu/				true	
+princeton.edu/			true	
+tinypic.com/			false	
+pen.io/					true	
+seattletimes.com/		true	
+netlog.com/				false	
+multiply.com/			true	
+vinaora.com/			false	
+dyndns.org/				true	
+sbwire.com/				true	
+themeforest.net/		true	
+woothemes.com/			true	
+acquirethisname.com/	false	
+earthlink.net/			true	
+arstechnica.com/		true	
+illinois.edu/			true	
+cam.ac.uk/				true	
+360.cn/					true	
+walmart.com/			true	
+unc.edu/				true	
+china.com.cn/			false	
+arizona.edu/			true	
+shutterfly.com/			false	
+pcworld.com/			true	
+123-reg.co.uk/			true	
+ihg.com/				true	
+scientificamerican.com/	true	
+bloglovin.com/			false	
+spotify.com/			true	
+de.vu/					true	
+sogou.com/				false	
+nsw.gov.au/				true	
+hao123.com/				false	
+bloglines.com/					Get http://www.bloglines.com/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+tmall.com/				false	
+furl.net/						Get http://www.furl.net/: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)

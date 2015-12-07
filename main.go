@@ -127,9 +127,9 @@ func writeFile(results []result) error {
 	fileContents := "Site\tFound\tError\t\n"
 	for _, result := range results {
 		if result.err != nil {
-			fileContents += fmt.Sprintf("%s\t%t\t%s\n", result.site, result.found, result.err.Error())
+			fileContents += fmt.Sprintf("%s\t%s\t%s\n", result.site, "", result.err.Error())
 		} else {
-			fileContents += fmt.Sprintf("%s\t%t\t%v\n", result.site, result.found, result.err)
+			fileContents += fmt.Sprintf("%s\t%t\t%v\n", result.site, result.found, "")
 		}
 	}
 
